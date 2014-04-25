@@ -5,6 +5,7 @@
 source("cachematrix.R")
 
 mdat <- matrix(c(2,1,3, 1,5,-3, 3,-3,7), nrow = 3, ncol = 3, byrow = TRUE)
+mdat2 <- matrix(c(0,1,3, -1,0,2, -3,2,0), nrow = 3, ncol = 3, byrow = TRUE)
 m <- makeCacheMatrix(mdat)
 
 ## Get the inverse the first time.  This requires calculating it
@@ -32,4 +33,13 @@ if (all.equal(solve(cacheSolve(m)), mdat)) {
     message("PASS: Inverse of inverse matches original matrix")
 } else {
     message("FAIL: Inverse of inverse does not match original matrix")
+}
+
+m$set(mdat2)
+inv.new <- cacheSolve(m)
+
+if (all.equal(inv.new, inv) != TRUE) {
+    message("PASS: Changing the stored matrix changes the reported inverse")
+} else {
+    message("FAIL: Changing the stored matrix does not change the reported inverse")
 }
