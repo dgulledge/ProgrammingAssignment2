@@ -1,5 +1,5 @@
 ## cacheMatrix.R contains an implementation of "memoization" of the
-## matrix inverse function.
+## matrix inverse function.  (See http://en.wikipedia.org/wiki/Memoization).
 
 ## This function creates an object containing a matrix that can
 ## cache the inverse of that matrix the first time it is calculated.

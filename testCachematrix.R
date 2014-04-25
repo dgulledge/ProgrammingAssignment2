@@ -4,6 +4,9 @@
 
 source("cachematrix.R")
 
+## Test data from "Linear Algebra, Theory and Applications by Kenneth Kuttler,
+## http://www.math.byu.edu/klkuttle/linearalgebra.pdf
+
 mdat <- matrix(c(2,1,3, 1,5,-3, 3,-3,7), nrow = 3, ncol = 3, byrow = TRUE)
 mdat2 <- matrix(c(0,1,3, -1,0,2, -3,2,0), nrow = 3, ncol = 3, byrow = TRUE)
 m <- makeCacheMatrix(mdat)
